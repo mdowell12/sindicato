@@ -1,0 +1,36 @@
+
+div.article {
+  margin: auto;
+  width: 75%;
+  /* border: 3px solid green; */
+  text-align: center;
+  padding: 10px;
+}
+
+p.text {
+  margin: auto;
+  width: 82%;
+  text-align: left;
+
+}
+
+p.byline {
+  margin: auto;
+  width: 82%;
+  text-align: left;
+  font-style: italic;
+  /* border: 3px solid green; */
+}
+
+img.article {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 80%
+}
+
+footer {
+  margin: auto;
+  width: 70%
+}
