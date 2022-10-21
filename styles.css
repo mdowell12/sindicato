@@ -1,5 +1,5 @@
 
-div.article {
+article {
   margin: auto;
   width: 75%;
   /* border: 3px solid green; */
@@ -22,7 +22,7 @@ p.byline {
   /* border: 3px solid green; */
 }
 
-img.article {
+.article-img {
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;
