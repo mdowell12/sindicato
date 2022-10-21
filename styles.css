@@ -9,8 +9,13 @@ article {
 
 p.text {
   margin: auto;
-  width: 82%;
+  width: 65%;
   text-align: left;
+  line-height: 1.6;
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: #111111;
+  font-family: "Source Serif Pro", "Baskerville Old Face", Garamond, "Times New Roman", serif;
 
 }
 
@@ -19,15 +24,28 @@ p.byline {
   width: 82%;
   text-align: left;
   font-style: italic;
-  /* border: 3px solid green; */
+  margin-top: 10px;
 }
 
 .article-img {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  width: 80%
+  /* margin-top: 10px;
+  margin-bottom: 10px; */
+  width: 80%;
+  padding: 0;
+}
+
+figure {
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+figcaption {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.8rem;
 }
 
 footer {

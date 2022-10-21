@@ -3,6 +3,7 @@ import os
 import boto3
 
 BUCKET_NAME = 'personal-news-site'
+UPLOAD_IMAGES = False
 DIRECTORIES_TO_UPLOAD = [
     'articles',
     'authors'
@@ -22,6 +23,9 @@ def upload_directory(client, path, bucketname):
 
 def upload_file(client, relative_path_to_file, bucketname):
     content_type = get_content_type(relative_path_to_file)
+    if 'image' in content_type and not UPLOAD_IMAGES:
+        print(f"Skipping image file {relative_path_to_file} with content_type {content_type}")
+        return
     print(f"Uploading {relative_path_to_file} to {relative_path_to_file} with content_type {content_type}")
     client.upload_file(relative_path_to_file,
                        bucketname,
