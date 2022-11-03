@@ -4,6 +4,7 @@ article {
   width: 75%;
   text-align: center;
   padding: 10px;
+  padding-bottom: 40px;
 }
 
 p.text {
@@ -15,7 +16,22 @@ p.text {
   font-weight: normal;
   color: #111111;
   font-family: "Source Serif Pro", "Baskerville Old Face", Garamond, "Times New Roman", serif;
+}
 
+a {
+  color: black;
+  text-decoration: none;
+  font-style: italic;
+}
+
+.article-link-container {
+  display: flex;
+}
+
+.article-link-container-name {
+  padding: 11%;
+  font-size: 35px;
+  text-align: center;
 }
 
 p.byline {
@@ -47,5 +63,28 @@ figcaption {
 
 footer {
   margin: auto;
-  width: 70%
+  width: 70%;
+  text-align: center;
+  border-top: solid;
+  border-bottom: solid;
+  border-bottom-width: 1px;
+  border-top-width: 1px;
+  padding: 11px;
+}
+
+#masthead {
+  text-align: center;
+  border-top: solid;
+  border-bottom: solid;
+  border-bottom-width: 1px;
+  border-top-width: 1px;
+  width: 90%;
+  margin: auto;
+  padding: 5px;
+}
+
+#header-site-title {
+  font-size: 26px;
+  font-variant: all-petite-caps;
+  padding-bottom: 4px;
 }
