@@ -34,6 +34,18 @@ a {
   text-align: center;
 }
 
+.article-title {
+  margin: 0%;
+  font-size: 35px;
+  text-align: center;
+}
+
+.article-date {
+  font-size: 16px;
+  text-align: right;
+  margin-top: 2%;
+}
+
 p.byline {
   margin: auto;
   width: 65%;
