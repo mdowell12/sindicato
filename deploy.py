@@ -52,6 +52,7 @@ def get_content_type(filename):
         return 'image/jpeg'
     elif filename.endswith('.png'):
         return 'image/png'
+    raise Exception("Unknown content type for file " + filename)
 
 
 def run():
