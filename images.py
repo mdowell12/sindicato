@@ -17,7 +17,8 @@ def run():
     images_folder_full_path = os.path.abspath(images_folder)
     files = os.listdir(images_folder_full_path)
     for file in files:
-        if not (file.endswith(".png") or file.endswith(".jpeg") or file.endswith(".jpg")):
+        filename = file.lower()
+        if not (filename.endswith(".png") or filename.endswith(".jpeg") or filename.endswith(".jpg")):
             print(f"Skipping file {file}")
             continue
         with Image.open(os.path.join(images_folder_full_path, file)) as im:
