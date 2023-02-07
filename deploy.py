@@ -3,7 +3,7 @@ import os
 import boto3
 
 BUCKET_NAME = 'personal-news-site'
-UPLOAD_IMAGES = False
+UPLOAD_IMAGES = True
 DIRECTORIES_TO_UPLOAD = [
     'articles',
     'authors'
