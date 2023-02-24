@@ -3,10 +3,11 @@ import os
 import boto3
 
 BUCKET_NAME = 'personal-news-site'
-UPLOAD_IMAGES = True
+UPLOAD_IMAGES = False
 DIRECTORIES_TO_UPLOAD = [
     'articles',
-    'authors'
+    'authors',
+    'meta',
 ]
 FILES_TO_UPLOAD = [
     'index.html',
@@ -23,14 +24,29 @@ def upload_directory(client, path, bucketname):
 
 def upload_file(client, relative_path_to_file, bucketname):
     content_type = get_content_type(relative_path_to_file)
-    if 'image' in content_type and not UPLOAD_IMAGES:
+    if is_image_file(content_type) and not UPLOAD_IMAGES:
         print(f"Skipping image file {relative_path_to_file} with content_type {content_type}")
         return
-    print(f"Uploading {relative_path_to_file} to {relative_path_to_file} with content_type {content_type}")
+    headers = get_headers_for_file(content_type)
+    print(f"Uploading {relative_path_to_file} to {relative_path_to_file} with headers {headers}")
     client.upload_file(relative_path_to_file,
                        bucketname,
                        relative_path_to_file,
-                       ExtraArgs={'ContentType':f'{content_type}'})
+                       ExtraArgs=headers)
+
+
+def get_headers_for_file(content_type):
+    result = {
+        'ContentType':f'{content_type}',
+    }
+    if is_image_file(content_type):
+        # 30 day image cache
+        result['CacheControl'] = 'max-age=2592000'
+    return result
+
+
+def is_image_file(content_type):
+    return 'image' in content_type
 
 
 def get_content_type(filename):

@@ -82,6 +82,12 @@ footer {
   border-bottom-width: 1px;
   border-top-width: 1px;
   padding: 11px;
+  font-size: 16px;
+}
+
+.footer-spacer {
+  padding-left: 2%;
+  padding-right: 2%;
 }
 
 #masthead {
