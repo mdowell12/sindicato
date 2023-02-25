@@ -105,4 +105,9 @@ footer {
   font-size: 26px;
   font-variant: all-petite-caps;
   padding-bottom: 4px;
+
+}
+
+#header-site-title a {
+  font-style: normal;
 }
