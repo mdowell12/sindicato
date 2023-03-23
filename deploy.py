@@ -23,6 +23,8 @@ def upload_directory(client, path, bucketname):
 
 
 def upload_file(client, relative_path_to_file, bucketname):
+    if 'DS_Store' in relative_path_to_file:
+        return
     content_type = get_content_type(relative_path_to_file)
     if is_image_file(content_type) and not UPLOAD_IMAGES:
         print(f"Skipping image file {relative_path_to_file} with content_type {content_type}")
