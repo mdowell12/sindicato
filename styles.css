@@ -1,12 +1,4 @@
 
-article {
-  margin: auto;
-  width: 75%;
-  text-align: center;
-  padding: 10px;
-  padding-bottom: 40px;
-}
-
 p.text {
   margin: auto;
   width: 65%;
@@ -24,20 +16,40 @@ a {
   font-style: italic;
 }
 
-.article-link-container {
-  display: flex;
+.article-table {
+  display: table;
+  margin-left: 25%;
+  border-collapse: separate;
+  border-spacing: 20px 20px;
+}
+
+.article {
+  display: table-row;
 }
 
 .article-link-container-name {
   padding: 11%;
   font-size: 35px;
   text-align: center;
+  display: table-cell;
+  vertical-align: bottom;
+}
+
+.article-link-container-figure {
+  margin-top: 25%;
+  width: 50%;
+  display: table-cell;
+}
+
+.article-link-container-figure img {
+  max-height:500px;
+  max-width:400px;
 }
 
 .article-title {
   margin: 0%;
   font-size: 35px;
-  text-align: center;
+  text-align: right;
 }
 
 .article-date {
@@ -110,4 +122,12 @@ footer {
 
 #header-site-title a {
   font-style: normal;
+}
+
+article {
+  margin: auto;
+  width: 75%;
+  text-align: center;
+  padding: 10px;
+  padding-bottom: 40px;
 }
