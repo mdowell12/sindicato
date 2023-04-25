@@ -8,6 +8,7 @@ DIRECTORIES_TO_UPLOAD = [
     'articles',
     'authors',
     'meta',
+    'favicon'
 ]
 FILES_TO_UPLOAD = [
     'index.html',
@@ -58,7 +59,7 @@ def get_content_type(filename):
         return 'text/html'
     elif filename.endswith('.txt'):
         return 'text/plain'
-    elif filename.endswith('.json'):
+    elif filename.endswith('.json') or filename.endswith('.webmanifest'):
         return 'application/json'
     elif filename.endswith('.ico'):
         return 'image/x-icon'
