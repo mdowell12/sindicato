@@ -18,10 +18,11 @@ def run():
     files = os.listdir(images_folder_full_path)
     for file in files:
         filename = file.lower()
-        if not (filename.endswith(".png") or filename.endswith(".jpeg") or filename.endswith(".jpg")):
+        if RESIZED_FILENAME_SUFFIX in filename or not (filename.endswith(".png") or filename.endswith(".jpeg") or filename.endswith(".jpg")):
             print(f"Skipping file {file}")
             continue
-        with Image.open(os.path.join(images_folder_full_path, file)) as im:
+        path_to_old_file = os.path.join(images_folder_full_path, file)
+        with Image.open(path_to_old_file) as im:
             (width, height) = (ARTICLE_IMAGE_WIDTH, int(im.height * (ARTICLE_IMAGE_WIDTH / im.width)))
             im_resized = im.resize((width, height))
         new_filename = "".join(file.split('.')[:-1]) + RESIZED_FILENAME_SUFFIX + "." + file.split('.')[-1]
