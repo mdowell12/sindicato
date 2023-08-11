@@ -3,7 +3,7 @@ import os
 import boto3
 
 BUCKET_NAME = 'personal-news-site'
-UPLOAD_IMAGES = False
+UPLOAD_IMAGES = True
 DIRECTORIES_TO_UPLOAD = [
     'articles',
     'authors',
@@ -27,7 +27,7 @@ def upload_file(client, relative_path_to_file, bucketname):
     if 'DS_Store' in relative_path_to_file:
         return
     content_type = get_content_type(relative_path_to_file)
-    if is_image_file(content_type) and not UPLOAD_IMAGES:
+    if is_image_file(content_type) and 'muir' not in relative_path_to_file:
         print(f"Skipping image file {relative_path_to_file} with content_type {content_type}")
         return
     headers = get_headers_for_file(content_type)
