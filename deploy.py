@@ -27,7 +27,7 @@ def upload_file(client, relative_path_to_file, bucketname):
     if 'DS_Store' in relative_path_to_file:
         return
     content_type = get_content_type(relative_path_to_file)
-    if is_image_file(content_type) and 'muir' not in relative_path_to_file:
+    if is_image_file(content_type) and 'icy' not in relative_path_to_file:
         print(f"Skipping image file {relative_path_to_file} with content_type {content_type}")
         return
     headers = get_headers_for_file(content_type)
@@ -67,7 +67,7 @@ def get_content_type(filename):
         return 'image/svg+xml'
     elif filename.endswith('.css'):
         return 'text/css'
-    elif filename.endswith('.jpeg') or filename.endswith('.jpg'):
+    elif filename.endswith('.jpeg') or filename.endswith('.jpg') or filename.endswith('.JPG'):
         return 'image/jpeg'
     elif filename.endswith('.png'):
         return 'image/png'
