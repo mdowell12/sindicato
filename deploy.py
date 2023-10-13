@@ -3,7 +3,9 @@ import os
 import boto3
 
 BUCKET_NAME = 'personal-news-site'
-UPLOAD_IMAGES = True
+UPLOAD_IMAGES_FOR_ARTICLES_WITH_NAME_THAT_INCLUDES = [
+    'enchantments'
+]
 DIRECTORIES_TO_UPLOAD = [
     'articles',
     'authors',
@@ -27,7 +29,7 @@ def upload_file(client, relative_path_to_file, bucketname):
     if 'DS_Store' in relative_path_to_file:
         return
     content_type = get_content_type(relative_path_to_file)
-    if is_image_file(content_type) and 'icy' not in relative_path_to_file:
+    if is_image_file(content_type) and not should_upload_image(relative_path_to_file):
         print(f"Skipping image file {relative_path_to_file} with content_type {content_type}")
         return
     headers = get_headers_for_file(content_type)
@@ -46,6 +48,13 @@ def get_headers_for_file(content_type):
         # 30 day image cache
         result['CacheControl'] = 'max-age=2592000'
     return result
+
+
+def should_upload_image(relative_path_to_file):
+    for partial_article_name in UPLOAD_IMAGES_FOR_ARTICLES_WITH_NAME_THAT_INCLUDES:
+        if partial_article_name in relative_path_to_file:
+            return True
+    return False
 
 
 def is_image_file(content_type):
