@@ -1,13 +1,15 @@
 """
-Create a new article at the provided path (see ARTICLE_FOLDER).
+Create a new article at the provided path (modify ARTICLE_FOLDER below).
 The script expects that you've copied the contents of a Google doc to your clipboard
 before running.
+
+python ./new_article.py
 """
 import os
 import subprocess
 
 
-ARTICLE_FOLDER = './articles/outdoors/uphill_ski_03_2024'
+ARTICLE_FOLDER = './articles/neighborhood/fresh_flours_05_24'
 
 ARTICLE_TEMPLATE = './templates/article.html'
 PARAGRAPH_TEMPLATE = './templates/paragraph.html'
