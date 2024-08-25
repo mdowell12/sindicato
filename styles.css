@@ -39,6 +39,7 @@ a {
   margin-top: 25%;
   width: 50%;
   display: table-cell;
+  vertical-align: middle;
 }
 
 .article-link-container-figure img {
