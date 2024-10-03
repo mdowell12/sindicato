@@ -9,7 +9,7 @@ import os
 import subprocess
 
 
-ARTICLE_FOLDER = './articles/neighborhood/broadcast_08_24'
+ARTICLE_FOLDER = './articles/neighborhood/asheville_10_03'
 
 ARTICLE_TEMPLATE = './templates/article.html'
 PARAGRAPH_TEMPLATE = './templates/paragraph.html'
