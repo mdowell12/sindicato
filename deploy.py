@@ -4,7 +4,7 @@ import boto3
 
 BUCKET_NAME = 'personal-news-site'
 UPLOAD_IMAGES_FOR_ARTICLES_WITH_NAME_THAT_INCLUDES = [
-
+    'zoka'
 ]
 DIRECTORIES_TO_UPLOAD = [
     'articles',
