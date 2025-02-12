@@ -10,6 +10,17 @@ p.text {
   font-family: "Source Serif Pro", "Baskerville Old Face", Garamond, "Times New Roman", serif;
 }
 
+p.poem {
+  margin: auto;
+  width: 65%;
+  text-align: center;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  font-weight: normal;
+  color: #111111;
+  font-family: "Source Serif Pro", "Baskerville Old Face", Garamond, "Times New Roman", serif;
+}
+
 a {
   color: black;
   text-decoration: none;
