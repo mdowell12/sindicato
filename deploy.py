@@ -4,7 +4,7 @@ import boto3
 
 BUCKET_NAME = 'personal-news-site'
 UPLOAD_IMAGES_FOR_ARTICLES_WITH_NAME_THAT_INCLUDES = [
-    'vagabond'
+    'diva'
 ]
 DIRECTORIES_TO_UPLOAD = [
     'articles',
@@ -79,6 +79,8 @@ def get_content_type(filename):
     elif filename.endswith('.jpeg') or filename.endswith('.jpg') or filename.endswith('.JPG'):
         return 'image/jpeg'
     elif filename.endswith('.png'):
+        return 'image/png'
+    elif filename.endswith('.webp'):
         return 'image/png'
     raise Exception("Unknown content type for file " + filename)
 
