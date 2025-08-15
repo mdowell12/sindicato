@@ -9,7 +9,7 @@ import os
 import subprocess
 
 
-ARTICLE_FOLDER = './articles/neighborhood/diva_01_2025'
+ARTICLE_FOLDER = './articles/neighborhood/overcast_08_25'
 
 ARTICLE_TEMPLATE = './templates/article.html'
 PARAGRAPH_TEMPLATE = './templates/paragraph.html'
@@ -45,6 +45,7 @@ def format_contents(contents, paragraph_template):
     contents = contents.replace(b'\xe2\x80\x9c', b"\"")
     contents = contents.replace(b'\xe2\x80\x9d', b"\"")
     # No need to be binary string
+    import pdb; pdb.set_trace()
     contents = contents.decode('ascii')
     # Create HTML elements for each paragraph
     paragraphs = contents.split('\n')
