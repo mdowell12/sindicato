@@ -39,13 +39,15 @@ def create_article(path, contents):
 
 
 def format_contents(contents, paragraph_template):
-    # Fix apostrophe
+    # Fix apostrophe and single quotes
     contents = contents.replace(b'\xe2\x80\x99', b"'")
+    contents = contents.replace(b'\xe2\x80\x98', b"'")
     # Fix quotation marks, start and end
     contents = contents.replace(b'\xe2\x80\x9c', b"\"")
     contents = contents.replace(b'\xe2\x80\x9d', b"\"")
+    # Fix elipses
+    contents = contents.replace(b'\xe2\x80\xa6', b"...")
     # No need to be binary string
-    import pdb; pdb.set_trace()
     contents = contents.decode('ascii')
     # Create HTML elements for each paragraph
     paragraphs = contents.split('\n')
