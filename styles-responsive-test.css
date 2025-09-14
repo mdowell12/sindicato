@@ -139,43 +139,62 @@ p.poem {
 
 .article-table {
   display: table;
-  margin-left: 25%;
   border-collapse: separate;
   border-spacing: 20px 20px;
 }
 
-.article-row {
-  display: table-row;
+.article-list {
+  max-width: 1200px;
+  margin: 1rem auto;
+  padding: 1rem;
 }
 
-.article-link-container-name {
-  padding: 11%;
-  font-size: 35px;
-  text-align: center;
-  display: table-cell;
-  vertical-align: bottom;
+.article-row {
+  display: flex;
+  flex-wrap: wrap;       /* wrap on small screens */
+  align-items: center;   /* vertical alignment */
+  gap: 20px;             /* spacing between figure and text */
+  margin-bottom: 40px;
+  font-size: 100px;
 }
 
 .article-link-container-figure {
-  margin-top: 25%;
-  width: 50%;
-  display: table-cell;
-  vertical-align: middle;
+  flex: 1 1 40%;         /* takes up 40% width, flexible */
 }
 
 .article-link-container-figure img {
-  max-height:500px;
-  max-width:400px;
+  max-width: 100%;
+  height: auto;
+  /* max-width: 400px; */
+  display: block;
+  margin: 0 auto;        /* centers image if narrower */
+  border-radius: 0px;    /* optional styling */
+}
+
+.article-link-container-name {
+  flex: 1 1 55%;         /* text takes 55% of width */
+  padding: 1rem;         /* spacing inside column */
+  text-align: center;
 }
 
 .article-title {
-  margin: 0%;
-  font-size: 35px;
-  text-align: right;
+  margin: 0;
+  font-size: 1em;
+  line-height: 1;
 }
 
 .article-date {
-  font-size: 16px;
-  text-align: right;
-  margin-top: 2%;
+  font-size: 0.5em;
+  color: #555;
+  margin-top: 0.3rem;
+  margin-bottom: 0.5rem;
 }
+
+.article-summary {
+  font-size: 0.3em;
+  max-width: 90%;
+  font-style: normal;
+  margin: 0 auto;
+}
+
+
