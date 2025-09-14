@@ -4,7 +4,7 @@ import boto3
 
 BUCKET_NAME = 'personal-news-site'
 UPLOAD_IMAGES_FOR_ARTICLES_WITH_NAME_THAT_INCLUDES = [
-    'overcast'
+    # 'overcast'
 ]
 DIRECTORIES_TO_UPLOAD = [
     'articles',
@@ -15,6 +15,7 @@ DIRECTORIES_TO_UPLOAD = [
 FILES_TO_UPLOAD = [
     'index.html',
     'styles.css',
+    'styles-responsive-test.css',
 ]
 
 
