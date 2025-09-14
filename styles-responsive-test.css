@@ -1,4 +1,125 @@
+a {
+  color: black;
+  text-decoration: none;
+  font-style: italic;
+}
 
+#masthead {
+  text-align: center;
+  border-top: solid;
+  border-bottom: solid;
+  border-bottom-width: 1px;
+  border-top-width: 1px;
+  max-width: 90%;
+  margin: auto;
+  padding: 5px;
+  font-size: 50px; 
+}
+
+#header-site-title {
+    font-variant: all-petite-caps;
+    padding-bottom: 4px;
+}
+
+#header-more-articles-link {
+  font-size: 0.8em;
+}
+
+footer {
+  margin: auto;
+  margin-bottom: 120px;
+  max-width: 90%;
+  text-align: center;
+  border-top: solid;
+  border-bottom: solid;
+  border-bottom-width: 1px;
+  border-top-width: 1px;
+  padding: 11px;
+  font-size: 40px;
+  
+  .footer-spacer {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+}
+
+
+/************************************************************************/
+/* articles */
+/************************************************************************/
+article {
+  margin: auto;
+  max-width: 100%;
+  font-size: 48px;
+  text-align: center;
+  padding: 1rem;
+  padding-bottom: 40px;
+  
+
+  p.text {
+    margin: 0 auto;
+    padding: 1rem;
+    width: 100%;
+    text-align: left;
+    line-height: 1.6;
+    font-weight: normal;
+    color: #111111;
+    font-family: "Source Serif Pro", "Baskerville Old Face", Garamond, "Times New Roman", serif;
+  }
+
+  .article-img {
+    margin: 1.5rem auto;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  figure {
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+
+  figcaption {
+    width: 70%;
+    margin: 0 auto;
+    font-size: 24px;
+  }
+
+  p.byline {
+    margin: 0 auto;
+    text-align: left;
+    font-style: italic;
+    max-width: 98%;
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 3.5em;
+    margin: 0;
+    margin-top: 0.2em;
+  }
+
+  h2 {
+    font-size: 1em;
+    margin: 0;
+    margin-bottom: 0.5em;
+  }
+
+
+  /* Desktop and larger (≥1024px) */
+  @media (min-width: 1024px) {
+    p.text {
+      width: 65%;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      /* padding: 3rem; */
+    }
+
+    .vertical-img {
+      max-height: 600px;
+      max-width: 500px;
+    }
+  }
+}
 
 p.poem {
   margin: auto;
@@ -11,11 +132,10 @@ p.poem {
   font-family: "Source Serif Pro", "Baskerville Old Face", Garamond, "Times New Roman", serif;
 }
 
-a {
-  color: black;
-  text-decoration: none;
-  font-style: italic;
-}
+
+/************************************************************************/
+/* article list pages */
+/************************************************************************/
 
 .article-table {
   display: table;
@@ -24,7 +144,7 @@ a {
   border-spacing: 20px 20px;
 }
 
-.article {
+.article-row {
   display: table-row;
 }
 
@@ -58,110 +178,4 @@ a {
   font-size: 16px;
   text-align: right;
   margin-top: 2%;
-}
-
-p.byline {
-  margin: auto;
-  width: 65%;
-  text-align: left;
-  font-style: italic;
-  margin-top: 10px;
-}
-
-.article-img {
-  margin-left: auto;
-  margin-right: auto;
-  width: 80%;
-  padding: 0;
-}
-
-.vertical-img {
-  max-height: 600px;
-  max-width: 500px;
-}
-
-figure {
-  margin-bottom: 30px;
-  margin-top: 30px;
-}
-
-figcaption {
-  width: 70%;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 0.8rem;
-}
-
-footer {
-  margin: auto;
-  width: 70%;
-  text-align: center;
-  border-top: solid;
-  border-bottom: solid;
-  border-bottom-width: 1px;
-  border-top-width: 1px;
-  padding: 11px;
-  font-size: 16px;
-}
-
-.footer-spacer {
-  padding-left: 2%;
-  padding-right: 2%;
-}
-
-#masthead {
-  text-align: center;
-  border-top: solid;
-  border-bottom: solid;
-  border-bottom-width: 1px;
-  border-top-width: 1px;
-  width: 90%;
-  margin: auto;
-  padding: 5px;
-}
-
-#header-site-title {
-  font-size: 26px;
-  font-variant: all-petite-caps;
-  padding-bottom: 4px;
-
-}
-
-#header-site-title a {
-  font-style: normal;
-}
-
-article {
-  margin: auto;
-  width: 100%;
-  
-  text-align: center;
-  padding: 1rem;
-  padding-bottom: 40px;
-
-  p.text {
-    max-width: 98%; /* keeps line length readable */
-    /* margin-left: 5%; */
-    /* margin-right: 1rem; */
-    /* margin-bottom: 1.25rem; */
-    margin: 0 auto;
-    padding: 1rem;
-    width: 100%;
-    text-align: left;
-    font-size: 48px;
-    line-height: 1.7;
-    font-weight: normal;
-    color: #111111;
-    font-family: "Source Serif Pro", "Baskerville Old Face", Garamond, "Times New Roman", serif;
-  }
-
-  /* Desktop and larger (≥1024px) */
-  @media (min-width: 1024px) {
-    p.text {
-      width: 65%;
-      font-size: 1.2rem;
-      line-height: 1.6;
-      /* padding: 3rem; */
-    }
-  }
 }
