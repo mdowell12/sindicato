@@ -15,7 +15,6 @@ DIRECTORIES_TO_UPLOAD = [
 FILES_TO_UPLOAD = [
     'index.html',
     'styles.css',
-    'styles-responsive-test.css',
 ]
 
 
