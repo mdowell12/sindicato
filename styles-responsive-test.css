@@ -13,16 +13,28 @@ a {
   max-width: 90%;
   margin: auto;
   padding: 5px;
-  font-size: 50px; 
+  font-size: 50px;
 }
 
 #header-site-title {
-    font-variant: all-petite-caps;
-    padding-bottom: 4px;
+  font-variant: all-petite-caps;
+  padding-bottom: 4px;
+}
+@media (min-width: 1024px) {
+  #header-site-title {
+    font-size: 26px;
+    
+  }
 }
 
 #header-more-articles-link {
   font-size: 0.8em;
+  display: block;
+}
+@media (min-width: 1024px) {
+  #header-more-articles-link {
+    font-size: 16px;
+  }
 }
 
 footer {
@@ -37,12 +49,19 @@ footer {
   padding: 11px;
   font-size: 40px;
   
+  /* Internal spacing between links */
   .footer-spacer {
     padding-left: 2%;
     padding-right: 2%;
   }
 }
-
+@media (min-width: 1024px) {
+  footer {
+    max-width: 70%;
+    font-size: 19px;
+    margin-bottom: 60px;
+  }
+}
 
 /************************************************************************/
 /* articles */
@@ -54,10 +73,10 @@ article {
   text-align: center;
   padding: 1rem;
   padding-bottom: 40px;
-  
 
   p.text {
     margin: 0 auto;
+    margin-bottom: 1rem;
     padding: 1rem;
     width: 100%;
     text-align: left;
@@ -66,11 +85,24 @@ article {
     color: #111111;
     font-family: "Source Serif Pro", "Baskerville Old Face", Garamond, "Times New Roman", serif;
   }
+  @media (min-width: 1024px) {
+    p.text {
+      font-size: 19px;
+      margin-bottom: auto;
+    }
+  }
 
   .article-img {
     margin: 1.5rem auto;
     max-width: 100%;
     padding: 0;
+  }
+  @media (min-width: 1024px) {
+    .article-img {
+      max-width: 90%;
+      margin: auto;
+      margin-top: 1rem;
+    }
   }
 
   figure {
@@ -83,6 +115,11 @@ article {
     margin: 0 auto;
     font-size: 24px;
   }
+  @media (min-width: 1024px) {
+    figcaption {
+      font-size: 16px;
+    }
+  }
 
   p.byline {
     margin: 0 auto;
@@ -91,11 +128,21 @@ article {
     max-width: 98%;
     padding: 1rem;
   }
+  @media (min-width: 1024px) {
+    p.byline {
+      font-size: 19px;
+    }
+  }
 
   h1 {
     font-size: 3.5em;
     margin: 0;
     margin-top: 0.2em;
+  }
+  @media (min-width: 1024px) {
+    h1 {
+      font-size: 1em;
+    }
   }
 
   h2 {
@@ -103,21 +150,15 @@ article {
     margin: 0;
     margin-bottom: 0.5em;
   }
-
-
-  /* Desktop and larger (≥1024px) */
   @media (min-width: 1024px) {
-    p.text {
-      width: 65%;
-      font-size: 1.2rem;
-      line-height: 1.6;
-      /* padding: 3rem; */
+    h2 {
+      font-size: 0.5em;
     }
-
-    .vertical-img {
-      max-height: 600px;
-      max-width: 500px;
-    }
+  }
+}
+@media (min-width: 1024px) {
+  article {
+    max-width: 65%;
   }
 }
 
@@ -132,21 +173,21 @@ p.poem {
   font-family: "Source Serif Pro", "Baskerville Old Face", Garamond, "Times New Roman", serif;
 }
 
-
 /************************************************************************/
 /* article list pages */
 /************************************************************************/
-
-.article-table {
-  display: table;
-  border-collapse: separate;
-  border-spacing: 20px 20px;
-}
 
 .article-list {
   max-width: 1200px;
   margin: 1rem auto;
   padding: 1rem;
+}
+@media (min-width: 1024px) {
+  .article-list {
+    /* max-width: 1000px; */
+    padding-left: 10%;
+    padding-right: 10%;
+  }
 }
 
 .article-row {
@@ -157,6 +198,11 @@ p.poem {
   margin-bottom: 40px;
   font-size: 100px;
 }
+@media (min-width: 1024px) {
+  .article-row {
+    font-size: 32px;
+  }
+}
 
 .article-link-container-figure {
   flex: 1 1 40%;         /* takes up 40% width, flexible */
@@ -165,10 +211,9 @@ p.poem {
 .article-link-container-figure img {
   max-width: 100%;
   height: auto;
-  /* max-width: 400px; */
   display: block;
-  margin: 0 auto;        /* centers image if narrower */
-  border-radius: 0px;    /* optional styling */
+  margin: 0 auto;
+  border-radius: 0px;
 }
 
 .article-link-container-name {
@@ -181,6 +226,7 @@ p.poem {
   margin: 0;
   font-size: 1em;
   line-height: 1;
+  font-weight: normal;
 }
 
 .article-date {
@@ -188,6 +234,7 @@ p.poem {
   color: #555;
   margin-top: 0.3rem;
   margin-bottom: 0.5rem;
+  font-weight: normal;
 }
 
 .article-summary {
