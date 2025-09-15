@@ -1,13 +1,168 @@
+a {
+  color: black;
+  text-decoration: none;
+  font-style: italic;
+}
 
-p.text {
+#masthead {
+  text-align: center;
+  border-top: solid;
+  border-bottom: solid;
+  border-bottom-width: 1px;
+  border-top-width: 1px;
+  max-width: 90%;
   margin: auto;
-  width: 65%;
-  text-align: left;
-  line-height: 1.6;
-  font-size: 1.2rem;
-  font-weight: normal;
-  color: #111111;
-  font-family: "Source Serif Pro", "Baskerville Old Face", Garamond, "Times New Roman", serif;
+  padding: 5px;
+  font-size: 50px;
+}
+
+#header-site-title {
+  font-variant: all-petite-caps;
+  padding-bottom: 4px;
+}
+@media (min-width: 1024px) {
+  #header-site-title {
+    font-size: 26px;
+    
+  }
+}
+
+#header-more-articles-link {
+  font-size: 0.8em;
+  display: block;
+}
+@media (min-width: 1024px) {
+  #header-more-articles-link {
+    font-size: 16px;
+  }
+}
+
+footer {
+  margin: auto;
+  margin-bottom: 120px;
+  max-width: 90%;
+  text-align: center;
+  border-top: solid;
+  border-bottom: solid;
+  border-bottom-width: 1px;
+  border-top-width: 1px;
+  padding: 11px;
+  font-size: 40px;
+  
+  /* Internal spacing between links */
+  .footer-spacer {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+}
+@media (min-width: 1024px) {
+  footer {
+    max-width: 70%;
+    font-size: 19px;
+    margin-bottom: 60px;
+  }
+}
+
+/************************************************************************/
+/* articles */
+/************************************************************************/
+article {
+  margin: auto;
+  max-width: 100%;
+  font-size: 48px;
+  text-align: center;
+  padding: 1rem;
+  padding-bottom: 40px;
+
+  p.text {
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    width: 100%;
+    text-align: left;
+    line-height: 1.6;
+    font-weight: normal;
+    color: #111111;
+    font-family: "Source Serif Pro", "Baskerville Old Face", Garamond, "Times New Roman", serif;
+  }
+  @media (min-width: 1024px) {
+    p.text {
+      font-size: 19px;
+      margin-bottom: auto;
+      padding: 0;
+      padding-top: 1rem;
+    }
+  }
+
+  .article-img {
+    margin: 1.5rem auto;
+    max-width: 100%;
+    padding: 0;
+  }
+  @media (min-width: 1024px) {
+    .article-img {
+      
+      margin: auto;
+      margin-top: 1rem;
+    }
+  }
+
+  figure {
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+
+  figcaption {
+    width: 70%;
+    margin: 0 auto;
+    font-size: 24px;
+  }
+  @media (min-width: 1024px) {
+    figcaption {
+      font-size: 16px;
+    }
+  }
+
+  p.byline {
+    margin: 0 auto;
+    text-align: left;
+    font-style: italic;
+    max-width: 98%;
+    padding: 1rem;
+  }
+  @media (min-width: 1024px) {
+    p.byline {
+      font-size: 19px;
+      padding-left: 0;
+    }
+  }
+
+  h1 {
+    font-size: 3.5em;
+    margin: 0;
+    margin-top: 0.2em;
+  }
+  @media (min-width: 1024px) {
+    h1 {
+      font-size: 1em;
+    }
+  }
+
+  h2 {
+    font-size: 1em;
+    margin: 0;
+    margin-bottom: 0.5em;
+  }
+  @media (min-width: 1024px) {
+    h2 {
+      font-size: 0.5em;
+    }
+  }
+}
+@media (min-width: 1024px) {
+  article {
+    max-width: 50%;
+  }
 }
 
 p.poem {
@@ -21,130 +176,75 @@ p.poem {
   font-family: "Source Serif Pro", "Baskerville Old Face", Garamond, "Times New Roman", serif;
 }
 
-a {
-  color: black;
-  text-decoration: none;
-  font-style: italic;
+/************************************************************************/
+/* article list pages */
+/************************************************************************/
+
+.article-list {
+  max-width: 1200px;
+  margin: 1rem auto;
+  padding: 1rem;
+}
+@media (min-width: 1024px) {
+  .article-list {
+    /* max-width: 1000px; */
+    padding-left: 10%;
+    padding-right: 10%;
+  }
 }
 
-.article-table {
-  display: table;
-  margin-left: 25%;
-  border-collapse: separate;
-  border-spacing: 20px 20px;
+.article-row {
+  display: flex;
+  flex-wrap: wrap;       /* wrap on small screens */
+  align-items: center;   /* vertical alignment */
+  gap: 20px;             /* spacing between figure and text */
+  margin-bottom: 40px;
+  font-size: 100px;
 }
-
-.article {
-  display: table-row;
-}
-
-.article-link-container-name {
-  padding: 11%;
-  font-size: 35px;
-  text-align: center;
-  display: table-cell;
-  vertical-align: bottom;
+@media (min-width: 1024px) {
+  .article-row {
+    font-size: 32px;
+  }
 }
 
 .article-link-container-figure {
-  margin-top: 25%;
-  width: 50%;
-  display: table-cell;
-  vertical-align: middle;
+  flex: 1 1 40%;         /* takes up 40% width, flexible */
 }
 
 .article-link-container-figure img {
-  max-height:500px;
-  max-width:400px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 0px;
+}
+
+.article-link-container-name {
+  flex: 1 1 55%;         /* text takes 55% of width */
+  padding: 1rem;         /* spacing inside column */
+  text-align: center;
 }
 
 .article-title {
-  margin: 0%;
-  font-size: 35px;
-  text-align: right;
+  margin: 0;
+  font-size: 1em;
+  line-height: 1;
+  font-weight: normal;
 }
 
 .article-date {
-  font-size: 16px;
-  text-align: right;
-  margin-top: 2%;
+  font-size: 0.5em;
+  color: #555;
+  margin-top: 0.3rem;
+  margin-bottom: 0.5rem;
+  font-weight: normal;
 }
 
-p.byline {
-  margin: auto;
-  width: 65%;
-  text-align: left;
-  font-style: italic;
-  margin-top: 10px;
-}
-
-.article-img {
-  margin-left: auto;
-  margin-right: auto;
-  width: 80%;
-  padding: 0;
-}
-
-.vertical-img {
-  max-height: 600px;
-  max-width: 500px;
-}
-
-figure {
-  margin-bottom: 30px;
-  margin-top: 30px;
-}
-
-figcaption {
-  width: 70%;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 0.8rem;
-}
-
-footer {
-  margin: auto;
-  width: 70%;
-  text-align: center;
-  border-top: solid;
-  border-bottom: solid;
-  border-bottom-width: 1px;
-  border-top-width: 1px;
-  padding: 11px;
-  font-size: 16px;
-}
-
-.footer-spacer {
-  padding-left: 2%;
-  padding-right: 2%;
-}
-
-#masthead {
-  text-align: center;
-  border-top: solid;
-  border-bottom: solid;
-  border-bottom-width: 1px;
-  border-top-width: 1px;
-  width: 90%;
-  margin: auto;
-  padding: 5px;
-}
-
-#header-site-title {
-  font-size: 26px;
-  font-variant: all-petite-caps;
-  padding-bottom: 4px;
-
-}
-
-#header-site-title a {
+.article-summary {
+  font-size: 0.3em;
+  max-width: 90%;
   font-style: normal;
+  margin: 0 auto;
 }
 
-article {
-  margin: auto;
-  width: 75%;
-  text-align: center;
-  padding: 10px;
-  padding-bottom: 40px;
-}
+
