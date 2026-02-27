@@ -9,7 +9,7 @@ import os
 import subprocess
 
 
-ARTICLE_FOLDER = './articles/outdoors/teanaways_01_26'
+ARTICLE_FOLDER = './articles/outdoors/hex_02_26'
 
 ARTICLE_TEMPLATE = './templates/article.html'
 PARAGRAPH_TEMPLATE = './templates/paragraph.html'
@@ -39,23 +39,28 @@ def create_article(path, contents):
 
 
 def format_contents(contents, paragraph_template):
-    # Fix apostrophe and single quotes
-    contents = contents.replace(b'\xe2\x80\x99', b"'")
-    contents = contents.replace(b'\xe2\x80\x98', b"'")
-    # Fix quotation marks, start and end
-    contents = contents.replace(b'\xe2\x80\x9c', b"\"")
-    contents = contents.replace(b'\xe2\x80\x9d', b"\"")
-    # Fix elipses
-    contents = contents.replace(b'\xe2\x80\xa6', b"...")
-    # No need to be binary string
-    contents = contents.decode('ascii')
-    # Create HTML elements for each paragraph
-    paragraphs = contents.split('\n')
-    result = []
-    for paragraph in paragraphs:
-        if paragraph.strip():
-            result.append(paragraph_template.replace(TEXT_TO_BE_REPLACED, paragraph))
-    return '\n'.join(result)
+    try:
+        # Fix apostrophe and single quotes
+        contents = contents.replace(b'\xe2\x80\x99', b"'")
+        contents = contents.replace(b'\xe2\x80\x98', b"'")
+        # Fix quotation marks, start and end
+        contents = contents.replace(b'\xe2\x80\x9c', b"\"")
+        contents = contents.replace(b'\xe2\x80\x9d', b"\"")
+        # Fix elipses
+        contents = contents.replace(b'\xe2\x80\xa6', b"...")
+        # No need to be binary string
+        contents = contents.decode('ascii')
+        # Create HTML elements for each paragraph
+        paragraphs = contents.split('\n')
+        result = []
+        for paragraph in paragraphs:
+            if paragraph.strip():
+                result.append(paragraph_template.replace(TEXT_TO_BE_REPLACED, paragraph))
+        return '\n'.join(result)
+    except UnicodeDecodeError as e:
+        if e.start:
+            print(f"Error decoding contents near text: {contents[e.start-20:e.start+20]}")
+        raise e
 
 
 def get_contents_from_clipboard():

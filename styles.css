@@ -176,6 +176,24 @@ p.poem {
   font-family: "Source Serif Pro", "Baskerville Old Face", Garamond, "Times New Roman", serif;
 }
 
+blockquote {
+  margin: 2rem auto;
+  padding: 1rem 1.5rem;
+  border-left: 4px solid #333;
+  font-style: italic;
+  color: #555;
+  font-family: "Source Serif Pro", "Baskerville Old Face", Garamond, "Times New Roman", serif;
+  line-height: 1.6;
+  max-width: 90%;
+}
+
+@media (min-width: 1024px) {
+  blockquote {
+    max-width: 80%;
+    font-size: 18px;
+  }
+}
+
 /************************************************************************/
 /* article list pages */
 /************************************************************************/
