@@ -37,6 +37,21 @@ a {
   }
 }
 
+#header-nav {
+  font-size: 0.8em;
+  display: block;
+
+  .header-nav-spacer {
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+  }
+}
+@media (min-width: 1024px) {
+  #header-nav {
+    font-size: 16px;
+  }
+}
+
 footer {
   margin: auto;
   margin-bottom: 120px;
